@@ -7,14 +7,43 @@ use List::Haystack;
 use Test::More;
 
 subtest 'Should instantiate successfully' => sub {
-    subtest 'With list that has any contents' => sub {
-        ok my $obj = List::Haystack->new([qw/foo bar/]);
-        isa_ok $obj, 'List::Haystack';
+    subtest 'Not lazy' => sub {
+        subtest 'With list that has any contents' => sub {
+            ok my $obj = List::Haystack->new([qw/foo bar foo/]);
+            isa_ok $obj, 'List::Haystack';
+
+            ok defined $obj->{haystack};
+            is ref $obj->{haystack}, 'HASH';
+            is_deeply $obj->{haystack}, {
+                foo => 2,
+                bar => 1,
+            };
+        };
+
+        subtest 'With empty list' => sub {
+            ok my $obj = List::Haystack->new([]);
+            isa_ok $obj, 'List::Haystack';
+
+            ok defined $obj->{haystack};
+            is ref $obj->{haystack}, 'HASH';
+            is_deeply $obj->{haystack}, {};
+        };
     };
 
-    subtest 'With empty list' => sub {
-        ok my $obj = List::Haystack->new([]);
-        isa_ok $obj, 'List::Haystack';
+    subtest 'Lazy' => sub {
+        subtest 'With list that has any contents' => sub {
+            ok my $obj = List::Haystack->new([qw/foo bar foo/], {lazy => 1});
+            isa_ok $obj, 'List::Haystack';
+
+            ok not defined $obj->{haystack};
+        };
+
+        subtest 'With empty list' => sub {
+            ok my $obj = List::Haystack->new([], {lazy => 1});
+            isa_ok $obj, 'List::Haystack';
+
+            ok not defined $obj->{haystack};
+        };
     };
 };
 
