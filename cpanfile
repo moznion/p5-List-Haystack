@@ -6,3 +6,8 @@ on 'test' => sub {
     requires 'Module::Spy';
 };
 
+on 'develop' => sub {
+    requires 'Perl::Critic';
+    requires 'Test::Perl::Critic';
+};
+
