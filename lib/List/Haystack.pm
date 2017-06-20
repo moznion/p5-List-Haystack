@@ -2,10 +2,52 @@ package List::Haystack;
 use 5.008001;
 use strict;
 use warnings;
+use Carp qw/croak/;
 
 our $VERSION = "0.01";
 
+sub new {
+    my ($class, $list) = @_;
 
+    if (not defined $list) {
+        croak 'Argument `$ad` is missing. It is a mandatory argument.';
+    }
+
+    if (ref $list ne 'ARRAY') {
+         croak 'Type of given argument `$ad` is not suitable. It must be array reference.';
+    }
+
+    my $self = bless {
+        list => $list,
+    }, $class;
+
+    $self->_construct_haystack;
+
+    return $self;
+}
+
+sub _construct_haystack {
+    my ($self) = @_;
+
+    my %haystack;
+    for my $item (@{($self->{list})}) {
+        $haystack{$item}++;
+    }
+
+    $self->{haystack} = \%haystack;
+}
+
+sub find {
+    my ($self, $needle) = @_;
+
+    return exists($self->{haystack}->{$needle}) ? 1 : 0;
+}
+
+sub cnt {
+    my ($self, $needle) = @_;
+
+    return $self->{haystack}->{$needle} || 0;
+}
 
 1;
 __END__
