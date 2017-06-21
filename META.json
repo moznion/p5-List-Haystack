@@ -1,5 +1,5 @@
 {
-   "abstract" : "A immutable list utility to find element",
+   "abstract" : "A immutable list utility to find and count element",
    "author" : [
       "moznion <moznion@gmail.com>"
    ],

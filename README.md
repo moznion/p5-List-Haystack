@@ -1,6 +1,6 @@
 # NAME
 
-List::Haystack - A immutable list utility to find element
+List::Haystack - A immutable list utility to find and count element
 
 # SYNOPSIS
 
@@ -48,7 +48,8 @@ A constructor.  `$list` is a target of list to find. It must be ArrayRef or unde
 `$option` is an HashRef argument of option. If you specify `lazy`, it puts off creation the internal structure until instance method is called (i.e. constructor doesn't create internal structure).
 
 e.g.
-    List::Haystack->new(\[...\], {lazy => 1}
+
+    List::Haystack->new([...], {lazy => 1}
 
 ## `haystack(): HashRef`
 

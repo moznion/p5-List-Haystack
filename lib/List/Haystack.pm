@@ -71,7 +71,7 @@ __END__
 
 =head1 NAME
 
-List::Haystack - A immutable list utility to find element
+List::Haystack - A immutable list utility to find and count element
 
 =head1 SYNOPSIS
 
@@ -119,6 +119,7 @@ A constructor.  C<$list> is a target of list to find. It must be ArrayRef or und
 C<$option> is an HashRef argument of option. If you specify C<lazy>, it puts off creation the internal structure until instance method is called (i.e. constructor doesn't create internal structure).
 
 e.g.
+
     List::Haystack->new([...], {lazy => 1}
 
 =head2 C<haystack(): HashRef>
