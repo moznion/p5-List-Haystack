@@ -138,9 +138,19 @@ This method returns number of occurrences of given C<$element>.
 
 To satisfy below features;
 
-    - Immutable operation
-    - Do not scan the list every time to find the element; reuse pre-built structure that is internal
-        - For performance and cosmetics
+=over 4
+
+=item * Immutable operation
+
+=item * Do not scan the list every time to find the element; reuse pre-built structure that is internal
+
+=over 8
+
+=item * For performance and cosmetics
+
+=back
+
+=back
 
 =head1 LICENSE
 

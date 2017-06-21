@@ -67,9 +67,9 @@ This method returns number of occurrences of given `$element`.
 
 To satisfy below features;
 
-    - Immutable operation
-    - Do not scan the list every time to find the element; reuse pre-built structure that is internal
-        - For performance and cosmetics
+- Immutable operation
+- Do not scan the list every time to find the element; reuse pre-built structure that is internal
+    - For performance and cosmetics
 
 # LICENSE
 
