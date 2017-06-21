@@ -10,11 +10,11 @@ sub new {
     my ($class, $list, $options) = @_;
 
     if (not defined $list) {
-        croak 'Argument `$ad` is missing. It is a mandatory argument.';
+        $list = [];
     }
 
     if (ref $list ne 'ARRAY') {
-         croak 'Type of given argument `$ad` is not suitable. It must be array reference.';
+         croak 'Type of given argument `$list` is not suitable. It must be array reference.';
     }
 
     my $self = bless {
