@@ -1,5 +1,5 @@
 name = "List-Haystack"
-# badges = ["travis"]
+badges = ["travis", "metacpan"]
 authority="cpan:MOZNION"
 
 module_maker="ModuleBuildTiny"

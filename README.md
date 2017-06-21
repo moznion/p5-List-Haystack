@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/moznion/p5-List-Haystack.svg?branch=master)](https://travis-ci.org/moznion/p5-List-Haystack) [![MetaCPAN Release](https://badge.fury.io/pl/List-Haystack.svg)](https://metacpan.org/release/List-Haystack)
 # NAME
 
 List::Haystack - A immutable list utility to find and count element
