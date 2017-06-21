@@ -63,6 +63,14 @@ This method returns whether given list contains `$element` or not.
 
 This method returns number of occurrences of given `$element`.
 
+# MOTIVATION
+
+To satisfy below features;
+
+    - Immutable operation
+    - Do not scan the list every time to find the element; reuse pre-built structure that is internal
+        - For performance and cosmetics
+
 # LICENSE
 
 Copyright (C) moznion.

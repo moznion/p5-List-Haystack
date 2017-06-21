@@ -134,6 +134,14 @@ This method returns whether given list contains C<$element> or not.
 
 This method returns number of occurrences of given C<$element>.
 
+=head1 MOTIVATION
+
+To satisfy below features;
+
+    - Immutable operation
+    - Do not scan the list every time to find the element; reuse pre-built structure that is internal
+        - For performance and cosmetics
+
 =head1 LICENSE
 
 Copyright (C) moznion.
